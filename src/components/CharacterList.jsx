@@ -4,15 +4,35 @@ import Character from "./Character";
 function NavPage(props) {
     return (
         <header className="d-flex justify-content-between align-items-center">
-            <p>Page: {props.page}</p>
-            <button
-                className="btn btn-primary btn-sm"
-                onClick={() => {
-                    props.setPage(props.page + 1);
-                }}
-            >
-                Page {props.page + 1}
-            </button>
+            {props.page > 1 ? (
+                <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => {
+                        props.setPage(
+                            props.page > 1 ? props.page - 1 : props.page
+                        );
+                    }}
+                >
+                    Page {props.page - 1}
+                </button>
+            ) : (
+                <div></div>
+            )}
+
+            {props.page < 42 ? (
+                <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => {
+                        props.setPage(
+                            props.page < 42 ? props.page + 1 : props.page
+                        );
+                    }}
+                >
+                    Page {props.page + 1}
+                </button>
+            ) : (
+                <div></div>
+            )}
         </header>
     );
 }
