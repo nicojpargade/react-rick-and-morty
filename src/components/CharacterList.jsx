@@ -13,7 +13,7 @@ function NavPage(props) {
                         );
                     }}
                 >
-                    Page {props.page - 1}
+                    Previous page
                 </button>
             ) : (
                 <div></div>
@@ -28,7 +28,7 @@ function NavPage(props) {
                         );
                     }}
                 >
-                    Page {props.page + 1}
+                    Next page
                 </button>
             ) : (
                 <div></div>
